@@ -51,7 +51,7 @@ def processRequest(req):
     #for some the line above gives an error and hence decoding to utf-8 might help
     #data = json.loads(result.decode('utf-8'))
     #res = makeWebhookResult(data)
-    speech = str(data)
+    speech = str(data['answers'])
     print("Response:")
     print(speech)
     return {
