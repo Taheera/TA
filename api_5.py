@@ -45,20 +45,27 @@ def processRequest(req):
     parameters = result.get("parameters")
     ques = parameters.get("any")
     ques1 = ques.replace(" ","+")
-    yql_url = baseurl + str(ques1)
-    result = urlopen(yql_url).read()
-    data1 = json.loads(result)[0]
-    #for some the line above gives an error and hence decoding to utf-8 might help
-    #data = json.loads(result.decode('utf-8'))
-    #res = makeWebhookResult(data)
-    speech = data1['answers']
-    #speech = data1
-    print("Response:")
-    print(speech)
-    return {
+    if len(ques1)== 0:
+        speech = "please try another question."
+        return {
         "fulfillmentText": speech,
         "source": "API"
-    }
+        }
+    else :
+        yql_url = baseurl + str(ques1)
+        result = urlopen(yql_url).read()
+        data1 = json.loads(result)[0]
+        #for some the line above gives an error and hence decoding to utf-8 might help
+        #data = json.loads(result.decode('utf-8'))
+        #res = makeWebhookResult(data)
+        speech = data1['answers']
+        #speech = data1
+        print("Response:")
+        print(speech)
+        return {
+            "fulfillmentText": speech,
+            "source": "API"
+        }
 
 @app.route('/test', methods=['GET'])
 def test():
