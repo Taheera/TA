@@ -48,7 +48,7 @@ def processRequest(req):
     yql_url = baseurl + str(ques1)
     result = urlopen(yql_url).read()
     data1 = json.loads(result)[0]
-    if len(data1)== 0:
+    if len(data1) == 0:
         speech = "please try another question."
         return {
         "fulfillmentText": speech,
