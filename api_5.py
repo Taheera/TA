@@ -51,8 +51,8 @@ def processRequest(req):
     if len(data1) == 0:
         speech = "please try another question."
         return {
-        "fulfillmentText": speech,
-        "source": "API"
+            "fulfillmentText": speech,
+            "source": "API"
         }
         #for some the line above gives an error and hence decoding to utf-8 might help
         #data = json.loads(result.decode('utf-8'))
