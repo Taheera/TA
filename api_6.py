@@ -46,7 +46,7 @@ def processRequest(req):
     ques = parameters.get("any")
     ques1 = ques.replace(" ","+")
     yql_url = baseurl + str(ques1)
-    try:
+    #try:
     result = urlopen(yql_url).read()
     data1 = json.loads(result)[0]
     #for some the line above gives an error and hence decoding to utf-8 might help
@@ -54,9 +54,9 @@ def processRequest(req):
     #res = makeWebhookResult(data)
     speech = data1['answers']
     #speech = data1
-    except ValueError:
-        print("Response:")
-        print('Please try another Question')
+    #except ValueError:
+       #print("Response:")
+       #print('Please try another Question')
     print("Response:")
     print(speech)
     return {
