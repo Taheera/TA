@@ -47,8 +47,9 @@ def processRequest(req):
     ques1 = ques.replace(" ","+")
     yql_url = baseurl + str(ques1)
     result = urlopen(yql_url).read()
-    data1 = json.loads(result)[0]
+    data1 = json.loads(result)
     if len(data1) == 0:
+        #print("Response:")
         speech = "please try another question."
         return {
             "fulfillmentText": speech,
@@ -58,7 +59,7 @@ def processRequest(req):
         #data = json.loads(result.decode('utf-8'))
         #res = makeWebhookResult(data)
     else:
-        speech = data1['answers']
+        speech = str(data1[0]["answers"])
         #speech = data1
         print("Response:")
         print(speech)
