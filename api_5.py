@@ -37,7 +37,7 @@ def webhook():
 def processRequest(req):
     if req.get("queryResult").get("action") != "interest":
         return {}
-    baseurl = "https://ec5c561f.ngrok.io/api/v1/resources/books?questions="
+    baseurl = "https://6acdb935.ngrok.io/api/v1/resources/books?questions="
     #yql_query = makeYqlQuery(req)
     #if yql_query is None:
         #return {}
