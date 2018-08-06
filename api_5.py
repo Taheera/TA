@@ -48,7 +48,7 @@ def processRequest(req):
     yql_url = baseurl + str(ques1)
     result = urlopen(yql_url).read()
     data1 = json.loads(result)
-    if data1 == "please try another question":
+    if data1[0] == "please try another question":
         #print("Response:")
         speech = "please try another question."
         return {
