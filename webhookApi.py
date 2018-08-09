@@ -6,10 +6,9 @@ import re, math
 from collections import Counter
 import json
 import pandas as pd
-import urlparse
-from urllib import urlencode
-from urllib import urlopen 
-from urllib2 import HTTPError,Request
+from urllib.parse import urlparse, urlencode
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError
 import os
 
 import google.cloud
