@@ -1,8 +1,4 @@
 from __future__ import print_function
-# coding: utf-8
-
-# In[1]:
-
 
 import flask
 from flask import request, jsonify, make_response
@@ -10,34 +6,17 @@ import re, math
 from collections import Counter
 import json
 import pandas as pd
-
-
-# In[2]:
-
-
 import urlparse
 from urllib import urlencode
 from urllib import urlopen 
 from urllib2 import HTTPError,Request
 import os
 
-
-# In[3]:
-
-
-import google.cloud
-from google.cloud import bigquery
-
-
-# In[4]:
-
+#import google.cloud
+#from google.cloud import bigquery
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-
-
-# In[5]:
-
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -54,10 +33,6 @@ def webhook():
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
-
-
-# In[6]:
-
 
 def processRequest(req):
     #if req.get("queryResult").get("action") != "interest":
@@ -94,17 +69,9 @@ def processRequest(req):
             "source": "API"
         }
 
-
-# In[7]:
-
-
 @app.route('/test', methods=['GET'])
 def test():
     return  "Hello there my friend !!"
-
-
-# In[8]:
-
 
 @app.route('/static_reply', methods=['POST'])
 def static_reply():
@@ -126,9 +93,6 @@ def static_reply():
     return r
 
 
-# In[9]:
-
-
 WORD = re.compile(r'\w+')
 
 def get_cosine(vec1, vec2):
@@ -145,69 +109,40 @@ def get_cosine(vec1, vec2):
         return float(numerator) / denominator
 
 
-# In[10]:
-
-
 def text_to_vector(text):
      words = WORD.findall(text)
      return Counter(words)
 
+#import os
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/css116549.CSSCORP/Desktop/Project/Project/Google Project-7b0442035754.json"
 
-# In[11]:
+#client = bigquery.Client(project='vast-incline-169817')
 
+#query = "SELECT * FROM ChatBot_QA.OA_QA"
 
-import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/css116549.CSSCORP/Desktop/Project/Project/Google Project-7b0442035754.json"
+#data_frame = pd.read_gbq(query, 'vast-incline-169817')
 
+#oa = data_frame.to_dict(orient='records')
 
-# In[12]:
-
-
-client = bigquery.Client(project='vast-incline-169817')
-
-
-# In[13]:
-
-
-query = "SELECT * FROM ChatBot_QA.OA_QA"
-
-
-# In[14]:
-
-
-data_frame = pd.read_gbq(query, 'vast-incline-169817')
-
-
-# In[15]:
-
-
-oa = data_frame.to_dict(orient='records')
-
-
-# In[16]:
-
-
-oa
-
-
-# In[17]:
+oa = [
+	{'id': 0,
+     'questions': 'what are the factors affecting pain in osteoarthritis',
+     'answers': "The perception of pain depends not only on the disease process and the brain's processing of pain messages, but also on cultural, gender, and psychological factors.",
+     },
+    {'id': 1,
+     'questions': 'what are the causes of sudden low back pain',
+     'answers': 'Cancer involving the spine',
+     }
+]
 
 
 @app.route('/', methods=['GET'])
 def home():
     return "<h1>osteoarthritis</h1><p>This site answers the questions on osteoarthritis.</p>"
 
-
-# In[18]:
-
-
 @app.route('/api/v1/resources/books/all', methods=['GET'])
 def api_all():
     return jsonify(oa)
-
-
-# In[19]:
-
 
 @app.route('/api/v1/resources/books', methods=['GET'])
 def api_id():
@@ -241,10 +176,6 @@ def api_id():
     # Use the jsonify function from Flask to convert our list of
     # Python dictionaries to the JSON format.
     return jsonify(results)
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
