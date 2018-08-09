@@ -34,7 +34,7 @@ from google.cloud import bigquery
 
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 
 
 # In[5]:
