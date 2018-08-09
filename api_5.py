@@ -38,7 +38,7 @@ def processRequest(req):
     #if req.get("queryResult").get("action") != "interest":
     if req.get("queryResult").get("action") != "osteo-info":
         return {}
-    baseurl = "https://4a1c508d.ngrok.io/api/v1/resources/books?questions="
+    baseurl = "http://59d20dae.ngrok.io/api/v1/resources/books?questions="
     #yql_query = makeYqlQuery(req)
     #if yql_query is None:
         #return {}
