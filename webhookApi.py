@@ -12,8 +12,8 @@ from urllib import urlopen
 from urllib2 import HTTPError,Request
 import os
 
-#import google.cloud
-#from google.cloud import bigquery
+import google.cloud
+from google.cloud import bigquery
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -113,16 +113,16 @@ def text_to_vector(text):
      words = WORD.findall(text)
      return Counter(words)
 
-#import os
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/css116549.CSSCORP/Desktop/Project/Project/Google Project-7b0442035754.json"
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/css116549.CSSCORP/Desktop/Project/Project/Google Project-7b0442035754.json"
 
-#client = bigquery.Client(project='vast-incline-169817')
+client = bigquery.Client(project='vast-incline-169817')
 
-#query = "SELECT * FROM ChatBot_QA.OA_QA"
+query = "SELECT * FROM ChatBot_QA.OA_QA"
 
-#data_frame = pd.read_gbq(query, 'vast-incline-169817')
+data_frame = pd.read_gbq(query, 'vast-incline-169817')
 
-#oa = data_frame.to_dict(orient='records')
+oa = data_frame.to_dict(orient='records')
 
 oa = [
 	{'id': 0,
