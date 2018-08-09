@@ -1,4 +1,4 @@
-
+from __future__ import print_function
 # coding: utf-8
 
 # In[1]:
@@ -10,7 +10,7 @@ import re, math
 from collections import Counter
 import json
 import pandas as pd
-from __future__ import print_function
+
 
 
 # In[2]:
