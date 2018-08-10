@@ -10,6 +10,7 @@ from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 import os
+import pandas_gbq
 
 import google.cloud
 from google.cloud import bigquery
