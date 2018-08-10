@@ -37,7 +37,7 @@ def processRequest(req):
     #if req.get("queryResult").get("action") != "interest":
     if req.get("queryResult").get("action") != "osteo-info":
         return {}
-    baseurl = "http://9b8e1d2d.ngrok.io/api/v1/resources/books?questions="
+    baseurl = "https://d00c443a.ngrok.io/api/v1/resources/books?questions="
     #yql_query = makeYqlQuery(req)
     #if yql_query is None:
         #return {}
@@ -113,7 +113,7 @@ def text_to_vector(text):
      return Counter(words)
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:/Users/css116549.CSSCORP/Desktop/Project/Project/Google Project-7b0442035754.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Google Project-7b0442035754.json"
 
 client = bigquery.Client(project='vast-incline-169817')
 
