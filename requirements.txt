@@ -2,4 +2,4 @@ Flask==0.10.1
 future==0.16.0
 numpy==1.15.0
 pandas==0.23.4
-google-apitools==0.4.11
+google-cloud==0.34.0
