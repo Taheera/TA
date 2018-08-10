@@ -4,4 +4,4 @@ numpy==1.15.0
 pandas==0.23.4
 google-auth
 google-auth-oauthlib
-google-cloud-bigquery[pandas]==0.3.0
+google-cloud-bigquery[pandas]==0.30.0
