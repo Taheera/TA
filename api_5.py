@@ -61,7 +61,7 @@ def processRequest(req):
         #res = makeWebhookResult(data)
     else:
         speech1 = str(data1[0]["answers"])
-        speech2 = str(data1[0]["feedback"])
+        speech2 = "How satisfied are you with this answer on a scale from 1-5?"
         speech = speech1 + '\n' + speech2
         #speech = data1
         print("Response:")
