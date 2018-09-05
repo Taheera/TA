@@ -60,7 +60,7 @@ def processRequest(req):
         #data = json.loads(result.decode('utf-8'))
         #res = makeWebhookResult(data)
     else:
-        speech1 = str(data[0]["Answers"])
+        speech1 = str(data[0])
         speech2 = "How satisfied are you with this answer on a scale from 1-5?"
         speech = speech1 + '\n' + speech2
         #speech = data1
