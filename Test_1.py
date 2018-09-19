@@ -22,5 +22,5 @@ def addjd():
         return "success" + " " + b
     else:
         return "false"
-app.run()
+app.run(debug=True, port=port, host='0.0.0.0')
 
