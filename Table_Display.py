@@ -1,16 +1,7 @@
 
-# coding: utf-8
-
-# In[3]:
-
-
 from dbconnect import connection
 import flask
 from flask import Flask, render_template
-
-
-# In[4]:
-
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = False
