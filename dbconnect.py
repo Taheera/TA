@@ -1,14 +1,5 @@
 
-# coding: utf-8
-
-# In[5]:
-
-
 import MySQLdb
-
-
-# In[6]:
-
 
 def connection():
     # Edited out actual values
