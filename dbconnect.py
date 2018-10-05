@@ -3,9 +3,9 @@ import MySQLdb
 
 def connection():
     # Edited out actual values
-    conn = MySQLdb.connect(host="127.0.0.1",
-                           user="root",
-                           passwd="Sep3@2018",
+    conn = MySQLdb.connect(host="us-cdbr-iron-east-01.cleardb.net",
+                           user="b88587cadf13d9",
+                           passwd="heroku_891d0a5899fbdca",
                            db = "TA")
     c = conn.cursor()
 
