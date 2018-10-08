@@ -8,7 +8,7 @@ import os
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Sep3@2018@localhost/TA'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b5e0ef8d514bf6:e0169a44@us-cdbr-iron-east-01.cleardb.net/heroku_517a14a1fceab5e'
 db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET'])
