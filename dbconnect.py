@@ -1,5 +1,5 @@
 
-import MySQLdb
+#import MySQLdb
 
 def connection():
     # Edited out actual values
