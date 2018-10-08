@@ -28,7 +28,7 @@ def home():
 if __name__ == '__main__':
 
 
-    port = int(os.getenv('PORT', 5000))
+    port = int(os.getenv('PORT', 40693))
 
     print("Starting app on port %d" % port)
 
