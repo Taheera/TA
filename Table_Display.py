@@ -7,7 +7,7 @@ from sqlalchemy import text
 import os
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = False
+app.config["DEBUG"] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Sep3@2018@localhost/TA'
 db = SQLAlchemy(app)
 
@@ -28,9 +28,10 @@ def home():
 if __name__ == '__main__':
 
 
-    port = int(os.getenv('PORT', 40693))
+    #port = int(os.getenv('PORT', 5000))
+    port = int(os.environ.get("PORT", 5000))
 
     print("Starting app on port %d" % port)
 
-    app.run(debug=True, port=port, host='127.0.0.1')
+    app.run(debug=True, port=port, host='0.0.0.0')
 
