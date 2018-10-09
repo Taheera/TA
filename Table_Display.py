@@ -5,10 +5,11 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 import os
+import pymysql
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Sep3@2018@localhost/TA'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Sep3@2018@localhost/TA'
 db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET'])
