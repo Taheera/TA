@@ -9,7 +9,7 @@ import pymysql
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://be019d2d96a00e:5ed5e601@us-cdbr-iron-east-01.cleardb.net/heroku_cf28925aace04cc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://be019d2d96a00e:5ed5e601@us-cdbr-iron-east-01.cleardb.net/heroku_cf28925aace04cc?reconnect=true'
 db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET'])
